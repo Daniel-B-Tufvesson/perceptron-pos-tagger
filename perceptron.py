@@ -9,6 +9,10 @@ TaggedSentence = list[Token]
 class PerceptronPOSTagger:
     """
     A multi-class perceptron for POS-tagging.
+
+    This is a simplified reimplementation of Honnibal, M. (2013). A Good Part-of-Speech Tagger
+    in about 200 Lines of Python.
+    https://explosion.ai/blog/part-of-speech-pos-tagger-in-python
     """
 
     def __init__(self):
@@ -233,7 +237,7 @@ def test():
     # Train tagger.
     print("Starting training.")
     train_sentences = tagged_sentences('suc3-pos-train.txt')
-    tagger.train(train_sentences, iterations=1)
+    tagger.train(train_sentences, iterations=10)
     print("Training complete.")
 
     # Test tagger on dev set.
