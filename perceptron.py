@@ -174,7 +174,7 @@ def tagged_sentences(file_name) -> list[TaggedSentence]:
             else:
                 fields = line.split('\t')
                 word = fields[0].strip().lower()
-                tag = fields[1]
+                tag = fields[1].strip()
                 tagged_sentence.append((word, tag))
 
     return sentences
